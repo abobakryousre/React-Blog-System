@@ -5,7 +5,7 @@ export function Post(postId){
   
     const [post, setpostState]= useState({})
     useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/posts/${postId}')
+        fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             .then(response => response.json())
             .then(json => setpostState(json))
             // console.log(users)
