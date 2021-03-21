@@ -1,16 +1,16 @@
-import {useState,useEffect} from "react"
-import {HomePage} from "./HomePage";
+import { useEffect, useState } from "react";
+import { HomePage } from "./HomePage";
 
 export function WelcomePage() {
 
-    const [users, setUsersState]= useState([{}])
+    const [users, setAllUserState]= useState([{}])
     const [user,setUserState]= useState({email:"",password:""})
     useEffect(()=>{
         fetch(`https://jsonplaceholder.typicode.com/users`)
             .then(response => response.json())
-            .then(json => setUser(json))
-        console.log(userID)
-        console.log(user)
+            .then(json => setAllUserState(json))
+            console.log(users)
+       
 
     } ,[] );
 
@@ -29,6 +29,8 @@ export function WelcomePage() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Email Address"
+                      value={user.email}
+                      onChange={(e)=>{setUserState({email:e.target.value})}}
 
                     />
                   </div>
@@ -41,11 +43,14 @@ export function WelcomePage() {
                       className="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Password"
+                      value={user.password}
+                      onChange={(e)=>{setUserState({email:user.email,password:e.target.value})}}
+
                     />
                   </div>
         <div className="mb-3">
 
-        <button className="btb btn-primary"> </button>
+        <button className="btb btn-primary" onClick={()=>{console.log(user)}}> </button>
 
         </div>
 
