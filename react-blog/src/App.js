@@ -1,13 +1,12 @@
 import "./App.css";
 import { WelcomePage } from "./component/WelcomePage.jsx";
 
+function App() {
 
 
   return (
-    <div className="App">
       <WelcomePage></WelcomePage>
-    </div>
-  );
-};
+  )
+}
 
 export default App;
