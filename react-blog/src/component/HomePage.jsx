@@ -1,3 +1,7 @@
+
+import {Post} from "../component/post"
+
+
 export function HomePage() {
   return(
       <div>
@@ -6,6 +10,9 @@ export function HomePage() {
         <span>Profile</span>
         <span></span>
         <span></span>
+        <br>
+      </br>
+      <Post postId={1}></Post>
       </div>
   )
 
