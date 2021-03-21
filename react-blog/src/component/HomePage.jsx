@@ -1,15 +1,15 @@
 
-import {Post} from "../component/post"
 import { useEffect, useState } from "react";
+import { Post } from "../component/post";
 
 
-export function HomePage() {
+export function HomePage(userId) {
   const [posts, setpostState]= useState([])
     useEffect(()=>{
         fetch(`https://jsonplaceholder.typicode.com/posts`)
             .then(response => response.json())
             .then(json => setpostState(json))
-            // console.log(users)
+            // console.log(posts)
        
 
     } ,[] );
@@ -23,9 +23,9 @@ export function HomePage() {
         <br>
       </br>
       <div>
+        
      {posts.map((post)=>{
-     <Post postId={post.id}></Post>
-           
+       return <div><Post postId={post.id}></Post></div>
       })} 
       </div>
      
